@@ -1,0 +1,16 @@
+Bom, não vai dar tempo para fazer o Power Query pois não tenho muita experiencia nisso e iria demorar para conseguir. 
+Porém vou explicar mais ou menos como eu faria para tentar entregar um pouco do que a atividade pede:
+
+1- Eu iria utilizar python e pandas para fazer grande parte da atividade
+2- Começaria importando as tabelas com read_excel da biblioteca pandas
+3- Pegaria uma amostra das tabelas utilizando head() para saber os nomes das colunas e mais ou menos os dados de cada coluna
+4- Caso o nome das colunas precisassem ser alterados iria mudar com .columns = ['nome_coluna1', 'nome_coluna2', ...] e assim por diante
+5- Depois começaria a ver se há valores nulos nas tabelas utilizando .isnull().sum() e caso haja valores nulos substitui-los pela media, mediana ou moda...
+...(dependendo do tipo de dado da coluna, caso for dado categórico devemos utilizar moda e caso seja contínuo devemos utilizar media ou mediana, dependendo de qual...
+...encaixar melhor)
+6- Depois para colunas categoricas utilizaria groupby para juntar os valores da coluna e .size() para saber se não há dados "incorretos"...
+... ou dados que se repetem porém com nomes diferentes.
+7- Verificaria se há dados duplicados utilizando .duplicated
+8- E por fim (na parte de tratamento de dados) iria verificar se há dados outliers para serem tratados
+9- Para criação do gráfico de linha utilizaria a biblioteca seaborn em python e com o metodo .kdeplot
+
